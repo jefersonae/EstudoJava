@@ -11,7 +11,7 @@ public class Main {
 
                 switch (mes) {
                     case 1:
-                        nomeMes = "Janeiro";
+                        nomeMes = "a";
                         break;
                     case 2:
                         nomeMes = "Fevereiro";
