@@ -4,52 +4,69 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
                 Scanner ler = new Scanner(System.in);
-                //Verificar mês
-                System.out.println("Digite o valor do mês para verificar qual o nome dele: ");
-                byte mes = ler.nextByte();
-                String nomeMes ;
+                /*
+                //Questão 6
+                int num;
+                do{
+                    System.out.println("Digite o valor do mês para verificar qual o nome dele: ");
+                    num = ler.nextInt();
+                }while(num != 0);
 
-                switch (mes) {
-                    case 1:
-                        nomeMes = "a";
-                        break;
-                    case 2:
-                        nomeMes = "Fevereiro";
-                        break;
-                    case 3:
-                        nomeMes = "Março";
-                        break;
-                    case 4:
-                        nomeMes = "Abril";
-                        break;
-                    case 5:
-                        nomeMes = "Maio";
-                        break;
-                    case 6:
-                        nomeMes = "Junho";
-                        break;
-                    case 7:
-                        nomeMes = "Julho";
-                        break;
-                    case 8:
-                        nomeMes = "Agosto";
-                        break;
-                    case 9:
-                        nomeMes = "Setembro";
-                        break;
-                    case 10:
-                        nomeMes = "Outubro";
-                        break;
-                    case 11:
-                        nomeMes = "Novembro";
-                        break;
-                    case 12:
-                        nomeMes = "Dezembro";
-                        break;
-                    default:
-                        nomeMes = "O valor informado "+mes+" não corresponde a nenhum mês do ano";
-                        break;
-                }
-                System.out.println(nomeMes);
+                //Questão 7
+                float sal;
+                do{
+                    System.out.print("Informe o salário do funcionário: R$");
+                    sal = ler.nextFloat();
+                }while(sal != 0);
+                */
+                //Questão 8
+                String nome = "a";
+                char sexo;
+                float p1,p2,p3,media;
+                byte faltas;
+
+                byte alunoH = 0;
+                byte alunoM = 0;
+                byte reprovadoH = 0;
+                byte reprovadoM = 0;
+                float mediaH = 0;
+                float mediaM = 0;
+                while (!nome.equals("fim")){
+                    System.out.println("Qual é o nome do aluno?");
+                    nome= ler.next();
+                    System.out.print("Qual o sexo de "+nome+" (M - p/ Masculino e F - p/ Feminino): ");
+                    sexo = ler.next().charAt(0);
+                    System.out.print("Qual a primeira nota de "+nome+": ");
+                    p1 = ler.nextFloat();
+                    System.out.print("Qual a segunda nota de "+nome+": ");
+                    p2 = ler.nextFloat();
+                    System.out.print("Qual a terceira nota de "+nome+": ");
+                    p3 = ler.nextFloat();
+                    System.out.print("Quantas faltas o aluno "+nome+" tem: ");
+                    faltas = ler.nextByte();
+                    media = (p1+p2+p3)/3;
+                    if(media >= 6 && faltas < 16){
+                        System.out.println("O aluno "+nome+" ficou com a média "+media+" está aprovado!");
+                    }else{
+                        System.out.println("O aluno "+nome+"ficou com a média "+media+" está reprovado!");
+                        if (sexo == 'M'){
+                             reprovadoM += 1;
+                        }else{
+                            reprovadoH += 1;
+                        }
+                    }
+                    if (sexo == 'M'){
+                        mediaM += media;
+                        alunoM += 1;
+                    }else{
+                        mediaH += media;
+                        alunoH += 1;
+                    }
+                };
+        System.out.println("A média das notas dos Homens da turma foi de : "+mediaH/alunoH);
+        System.out.println("A média das notas das Mulheres da turma foi de: "+mediaM/alunoM);
+        System.out.println("O percentual de Homens reprovados foi de : "+((alunoM+alunoH)/reprovadoH));
+        System.out.println("O percentual de Homens reprovados foi de : "+((alunoM+alunoH)/reprovadoM));
+        System.out.println("O percentual de reprovados foi de : "+((alunoM+alunoH)/(reprovadoM+reprovadoH)));
         }
     }
