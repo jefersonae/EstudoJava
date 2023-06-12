@@ -18,22 +18,22 @@ public class Main {
                     System.out.print("Informe o salário do funcionário: R$");
                     sal = ler.nextFloat();
                 }while(sal != 0);
-                */
+
                 //Questão 8
                 String nome = "a";
                 char sexo;
                 float p1,p2,p3,media;
                 byte faltas;
 
-                byte alunoH = 0;
                 byte alunoM = 0;
-                byte reprovadoH = 0;
+                byte alunoF = 0;
                 byte reprovadoM = 0;
-                float mediaH = 0;
+                byte reprovadoF = 0;
+                float mediaF = 0;
                 float mediaM = 0;
+                System.out.println("Qual é o nome do aluno? (digite fim p/sair)");
+                nome= ler.next();
                 while (!nome.equals("fim")){
-                    System.out.println("Qual é o nome do aluno?");
-                    nome= ler.next();
                     System.out.print("Qual o sexo de "+nome+" (M - p/ Masculino e F - p/ Feminino): ");
                     sexo = ler.next().charAt(0);
                     System.out.print("Qual a primeira nota de "+nome+": ");
@@ -48,25 +48,60 @@ public class Main {
                     if(media >= 6 && faltas < 16){
                         System.out.println("O aluno "+nome+" ficou com a média "+media+" está aprovado!");
                     }else{
-                        System.out.println("O aluno "+nome+"ficou com a média "+media+" está reprovado!");
+                        System.out.println("O aluno "+nome+" ficou com a média "+media+" está reprovado!");
                         if (sexo == 'M'){
                              reprovadoM += 1;
                         }else{
-                            reprovadoH += 1;
+                            reprovadoF += 1;
                         }
                     }
                     if (sexo == 'M'){
                         mediaM += media;
                         alunoM += 1;
                     }else{
-                        mediaH += media;
-                        alunoH += 1;
+                        mediaF += media;
+                        alunoF += 1;
                     }
+                    System.out.println("Qual é o nome do aluno? (digite fim p/sair)");
+                    nome= ler.next();
                 };
-        System.out.println("A média das notas dos Homens da turma foi de : "+mediaH/alunoH);
-        System.out.println("A média das notas das Mulheres da turma foi de: "+mediaM/alunoM);
-        System.out.println("O percentual de Homens reprovados foi de : "+((alunoM+alunoH)/reprovadoH));
-        System.out.println("O percentual de Homens reprovados foi de : "+((alunoM+alunoH)/reprovadoM));
-        System.out.println("O percentual de reprovados foi de : "+((alunoM+alunoH)/(reprovadoM+reprovadoH)));
-        }
+                System.out.println("A média das notas dos Homens da turma foi de : "+mediaM/alunoM);
+                System.out.println("A média das notas das Mulheres da turma foi de: "+mediaF/alunoF);
+                System.out.println("O percentual de Homens reprovados foi de : "+(reprovadoM*100)/(alunoF+alunoM));
+                System.out.println("O percentual de Mulheres reprovados foi de : "+(reprovadoF*100)/(alunoF+alunoM));
+                System.out.println("O percentual de reprovados foi de : "+((reprovadoM+reprovadoF)*100)/(alunoF+alunoM));
+
+                //Questão 9
+                int proximo;
+                int primeiro = 0; // primeiro termo
+                int segundo = 1; // segundo termo
+
+                System.out.print(primeiro + " , " + segundo); // imprime os dois primeiros termos
+                int n = 5000;
+
+                for(int i = 2; i < n; i++){
+                    proximo = primeiro + segundo;
+                    System.out.print(" , "+proximo);
+                    primeiro = segundo;
+                    segundo = proximo;
+                }
+
+                //Questão 10
+                int soma = 1;
+                System.out.print("Digite algum número positivo: ");
+                int fatorial = ler.nextInt();
+                for (int i = 1; i <= fatorial ;i++){
+                    soma = soma*i;
+                }
+                System.out.println("O fatorial de "+fatorial+"! é "+soma);
+                */
+                //Questão 11
+                float soma = 0;
+                System.out.println("Digite o valor de H que será usado na sequência 1/1 , 1/2 ,1/3 , 1/h");
+                int h = ler.nextInt();
+                for (int i = 1; i<=h ; i++){
+                    soma += ((float) 1 / i);
+                }
+                System.out.print("A soma da sequência é : "+soma);
     }
+}
