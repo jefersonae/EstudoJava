@@ -1,6 +1,6 @@
 public class Psicologo extends Pessoa {
     private String especialidade;
-    private int crp;
+    private String crp;
 
     public String getEspecialidade() {
         return especialidade;
@@ -10,11 +10,11 @@ public class Psicologo extends Pessoa {
         this.especialidade = especialidade;
     }
 
-    public int getCrp() {
+    public String getCrp() {
         return crp;
     }
 
-    public void setCrp(int crp) {
+    public void setCrp(String crp) {
         this.crp = crp;
     }
 }
