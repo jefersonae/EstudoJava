@@ -14,14 +14,19 @@ public class App {
         ArrayList<Psicologo> listaPsicologo = new ArrayList<>();
         ArrayList<Pedagogo> listaPedagogo = new ArrayList<>();
         ArrayList<Tecnico> listaTecnico = new ArrayList<>();
+        ArrayList<Responsavel> listaResponsavel = new ArrayList<>();
+        ArrayList<Candidato> listaCandidato = new ArrayList<>();
 
         String nome;
         char sex;
         String localNascimento;
         String dataNascimento;
         String cpf;
+        int codConcurso;
+        int pontuacao;
         float nota1;
         float nota2;
+        double renda;
         String formacao;
         byte qntDisciplina;
         String especialidade;
@@ -30,6 +35,8 @@ public class App {
         String cargo;
         String funcao;
         String anoEntrada;
+        String parentesco;
+        String dataConcurso;
 
         while(opcao != 0){
             switch (opcao){
@@ -65,10 +72,10 @@ public class App {
 
                     listaAlunos.add(aluno);
                     System.out.println("Aluno cadastrado com sucesso");
-
                     break;
                 case 2:
-                    System.out.println("opcao 2");
+                    System.out.println("********************LISTA DE ALUNOS********************");
+                    System.out.println(listaAlunos);
                     break;
                 case 3:
                     Professor professor = new Professor();
@@ -102,9 +109,11 @@ public class App {
 
                     listaProfessor.add(professor);
                     System.out.println("Professor cadastrado com sucesso");
+                    System.out.println("Professor >>>"+professor);
                     break;
                 case 4:
-                    System.out.println("opcao 4");
+                    System.out.println("********************LISTA DE PROFESSORES********************");
+                    System.out.println(listaProfessor);
                     break;
                 case 5:
                     Psicologo psicologo = new Psicologo();
@@ -140,7 +149,8 @@ public class App {
                     System.out.println("Psicologo cadastrado com sucesso");
                     break;
                 case 6:
-                    System.out.println("opcao 6");
+                    System.out.println("********************LISTA DE PSICOLOGIA********************");
+                    System.out.println(listaPsicologo);
                     break;
                 case 7:
                     Pedagogo pedagogo  = new Pedagogo();
@@ -172,7 +182,8 @@ public class App {
                     System.out.println("Pedagogo cadastrado com sucesso");
                     break;
                 case 8:
-                    System.out.println("opcao 8");
+                    System.out.println("********************LISTA DE PEDAGOGO********************");
+                    System.out.println(listaPedagogo);
                     break;
                 case 9:
                     Tecnico tecnico  = new Tecnico();
@@ -212,7 +223,87 @@ public class App {
                     System.out.println("Tecnico cadastrado com sucesso");
                     break;
                 case 10:
-                    System.out.println("opcao 10");
+                    System.out.println("********************LISTA DE TECNICO********************");
+                    System.out.println(listaTecnico);
+                    break;
+                case 11:
+                    Responsavel resposanvel  = new Responsavel();
+                    System.out.println("Nome do Responsável: ");
+                    nome = ler.next();
+                    resposanvel.setNome(nome);
+
+                    System.out.println("Qual o seu sexo (digite M - Mulher / H - Homem)? ");
+                    sex = ler.next().charAt(0);
+                    resposanvel.setSex(sex);
+
+                    System.out.println("Digite o local de nascimento: ");
+                    localNascimento = ler.next();
+                    resposanvel.setNomeNascimento(localNascimento);
+
+                    System.out.println("Digite a data de nascimento: ");
+                    dataNascimento = ler.next();
+                    resposanvel.setDataNascimento(dataNascimento);
+
+                    System.out.println("Digite o CPF: ");
+                    cpf = ler.next();
+                    resposanvel.setCpf(cpf);
+
+                    System.out.println("Digite o parentesco: ");
+                    parentesco = ler.next();
+                    resposanvel.setParentesco(parentesco);
+
+                    System.out.println("Digite a renda: ");
+                    renda = ler.nextDouble();
+                    resposanvel.setRenda(renda);
+
+                    listaResponsavel.add(resposanvel);
+                    System.out.println("Responsável cadastrado com sucesso");
+                    break;
+                case 12:
+                    System.out.println("********************LISTA DE RESPONSAVEL********************");
+                    System.out.println(listaResponsavel);
+                    break;
+                case 13:
+                    Candidato candidato  = new Candidato();
+                    System.out.println("Nome do Candidato: ");
+                    nome = ler.next();
+                    candidato.setNome(nome);
+
+                    System.out.println("Qual o seu sexo (digite M - Mulher / H - Homem)? ");
+                    sex = ler.next().charAt(0);
+                    candidato.setSex(sex);
+
+                    System.out.println("Digite o local de nascimento: ");
+                    localNascimento = ler.next();
+                    candidato.setNomeNascimento(localNascimento);
+
+                    System.out.println("Digite a data de nascimento: ");
+                    dataNascimento = ler.next();
+                    candidato.setDataNascimento(dataNascimento);
+
+                    System.out.println("Digite o CPF: ");
+                    cpf = ler.next();
+                    candidato.setCpf(cpf);
+
+                    System.out.println("Digite a data do concurso: ");
+                    dataConcurso = ler.next();
+                    candidato.setDataConcurso(dataConcurso);
+
+                    System.out.println("Digite código de Concurso: ");
+                    codConcurso = ler.nextInt();
+                    candidato.setCodConcurso(codConcurso);
+
+                    System.out.println("Digite código de Concurso: ");
+                    pontuacao = ler.nextInt();
+                    candidato.setPontuacao(pontuacao);
+
+                    listaCandidato.add(candidato);
+                    System.out.println("Candidato cadastrado com sucesso");
+                    break;
+                case 14:
+                    System.out.println("********************LISTA DE CANDIDATO********************");
+                    System.out.println(listaCandidato);
+                    break;
             }
             opcao = ler.nextInt();
         }

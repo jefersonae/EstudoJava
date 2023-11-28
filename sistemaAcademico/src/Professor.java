@@ -17,4 +17,8 @@ public class Professor extends Pessoa {
     public void setQntDisciplina(byte qntDisciplina) {
         this.qntDisciplina = qntDisciplina;
     }
+    public String toString(){
+        return super.toString()+"Formação: "+getFormacao()+"\n"+
+                "Quantidade de disciplina: "+getQntDisciplina();
+    }
 }

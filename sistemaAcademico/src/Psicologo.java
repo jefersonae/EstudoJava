@@ -17,4 +17,8 @@ public class Psicologo extends Pessoa {
     public void setCrp(String crp) {
         this.crp = crp;
     }
+    public String toString(){
+        return super.toString()+"Especialidae: "+getEspecialidade()+"\n"+
+                "CRP: "+getCrp();
+    }
 }

@@ -17,4 +17,8 @@ public class Aluno extends Pessoa {
     public void setNota2(float nota2) {
         this.nota2 = nota2;
     }
+    public String toString(){
+        return super.toString()+"Nota 1: "+getNota1()+"\n"+
+                "Nota 2: "+getNota2();
+    }
 }

@@ -26,4 +26,9 @@ public class Tecnico extends Pessoa {
     public void setAnoEntrada(String anoEntrada) {
         this.anoEntrada = anoEntrada;
     }
+    public String toString() {
+        return super.toString()+"Cargo: "+getCargo()+"\n"+
+                "Função: "+getFuncao()+"\n"+
+                "Entrada: "+getAnoEntrada();
+    }
 }
