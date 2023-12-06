@@ -16,6 +16,9 @@ public class App {
         ArrayList<Tecnico> listaTecnico = new ArrayList<>();
         ArrayList<Responsavel> listaResponsavel = new ArrayList<>();
         ArrayList<Candidato> listaCandidato = new ArrayList<>();
+        ArrayList<Coordenador> listaCoordenador = new ArrayList<>();
+        ArrayList<AssistenteSocial> listaAssistenteSocial = new ArrayList<>();
+        ArrayList<Egresso> listaEgresso = new ArrayList<>();
 
         String nome;
         char sex;
@@ -37,6 +40,14 @@ public class App {
         String anoEntrada;
         String parentesco;
         String dataConcurso;
+        String cress;
+        int numAlunos;
+        String anoSaida;
+        int qntAno;
+        String anoInicio;
+        String anoConclusao;
+        int anosGraduacao;
+        String nomeCurso;
 
         while(opcao != 0){
             switch (opcao){
@@ -293,7 +304,7 @@ public class App {
                     codConcurso = ler.nextInt();
                     candidato.setCodConcurso(codConcurso);
 
-                    System.out.println("Digite código de Concurso: ");
+                    System.out.println("Digite a pontuacao do Concurso: ");
                     pontuacao = ler.nextInt();
                     candidato.setPontuacao(pontuacao);
 
@@ -303,6 +314,126 @@ public class App {
                 case 14:
                     System.out.println("********************LISTA DE CANDIDATO********************");
                     System.out.println(listaCandidato);
+                    break;
+                case 15:
+                    AssistenteSocial assistenteSocial  = new AssistenteSocial();
+                    System.out.println("Nome do Candidato: ");
+                    nome = ler.next();
+                    assistenteSocial.setNome(nome);
+
+                    System.out.println("Qual o seu sexo (digite M - Mulher / H - Homem)? ");
+                    sex = ler.next().charAt(0);
+                    assistenteSocial.setSex(sex);
+
+                    System.out.println("Digite o local de nascimento: ");
+                    localNascimento = ler.next();
+                    assistenteSocial.setNomeNascimento(localNascimento);
+
+                    System.out.println("Digite a data de nascimento: ");
+                    dataNascimento = ler.next();
+                    assistenteSocial.setDataNascimento(dataNascimento);
+
+                    System.out.println("Digite o CPF: ");
+                    cpf = ler.next();
+                    assistenteSocial.setCpf(cpf);
+
+                    System.out.println("Digite o registro do CRESS: ");
+                    cress = ler.next();
+                    assistenteSocial.setCress(cress);
+
+                    System.out.println("Digite o número de alunos responsáveis: ");
+                    numAlunos = ler.nextInt();
+                    assistenteSocial.setNumAlunos(numAlunos);
+
+                    listaAssistenteSocial.add(assistenteSocial);
+                    break;
+                case 16:
+                    System.out.println("********************LISTA DE ASSISTENTE SOCIAL********************");
+                    System.out.println(listaAssistenteSocial);
+                    break;
+                case 17:
+                    Coordenador coordenador  = new Coordenador();
+                    System.out.println("Nome do Candidato: ");
+                    nome = ler.next();
+                    coordenador.setNome(nome);
+
+                    System.out.println("Qual o seu sexo (digite M - Mulher / H - Homem)? ");
+                    sex = ler.next().charAt(0);
+                    coordenador.setSex(sex);
+
+                    System.out.println("Digite o local de nascimento: ");
+                    localNascimento = ler.next();
+                    coordenador.setNomeNascimento(localNascimento);
+
+                    System.out.println("Digite a data de nascimento: ");
+                    dataNascimento = ler.next();
+                    coordenador.setDataNascimento(dataNascimento);
+
+                    System.out.println("Digite o CPF: ");
+                    cpf = ler.next();
+                    coordenador.setCpf(cpf);
+
+                    System.out.println("Digite o ano de entrada no cargo: ");
+                    anoEntrada = ler.next();
+                    coordenador.setAnoEntrada(anoEntrada);
+
+                    System.out.println("Digite o ano de saída do cargo: ");
+                    anoSaida = ler.next();
+                    coordenador.setAnoSaida(anoSaida);
+
+                    System.out.println("Digite a quantidade de anos no cargo: ");
+                    qntAno = ler.nextInt();
+                    coordenador.setQntAno(qntAno);
+
+                    listaCoordenador.add(coordenador);
+                    break;
+                case 18:
+                    System.out.println("********************LISTA DE COORDENADOR********************");
+                    System.out.println(listaCoordenador);
+                    break;
+                case 19:
+                    Egresso egresso  = new Egresso();
+                    System.out.println("Nome do Candidato: ");
+                    nome = ler.next();
+                    egresso.setNome(nome);
+
+                    System.out.println("Qual o seu sexo (digite M - Mulher / H - Homem)? ");
+                    sex = ler.next().charAt(0);
+                    egresso.setSex(sex);
+
+                    System.out.println("Digite o local de nascimento: ");
+                    localNascimento = ler.next();
+                    egresso.setNomeNascimento(localNascimento);
+
+                    System.out.println("Digite a data de nascimento: ");
+                    dataNascimento = ler.next();
+                    egresso.setDataNascimento(dataNascimento);
+
+                    System.out.println("Digite o CPF: ");
+                    cpf = ler.next();
+                    egresso.setCpf(cpf);
+
+                    System.out.println("Digite o ano que entrou no curso: ");
+                    anoInicio = ler.next();
+                    egresso.setAnoInicio(anoInicio);
+
+                    System.out.println("Digite o ano de saída do curso: ");
+                    anoConclusao = ler.next();
+                    egresso.setAnoConclusao(anoConclusao);
+
+                    System.out.println("Digite a quantidade de anos que demorou para se graduar: ");
+                    anosGraduacao = ler.nextInt();
+                    egresso.setAnosGraduacao(anosGraduacao);
+
+                    System.out.println("Digite o nome do curso: ");
+                    nomeCurso = ler.next();
+                    egresso.setNomeCurso(nomeCurso);
+
+                    listaEgresso.add(egresso);
+                    break;
+                case 20:
+                    System.out.println("********************LISTA DE EGRESSO********************");
+                    System.out.println(listaEgresso);
                     break;
             }
             opcao = ler.nextInt();
