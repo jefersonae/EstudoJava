@@ -30,4 +30,4 @@ public class Coordenador extends Professor {
                 "Ano Saída: "+getAnoSaida()+"\n"+
                 "A quantidade de anos permaceu no cargo foi:"+getQntAno();
     }
-}A
+}
