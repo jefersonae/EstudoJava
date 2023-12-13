@@ -1,9 +1,13 @@
-public class Pessoa {
+public abstract class Pessoa {
     private String nome ;
     private char sex;
     private String nomeNascimento;
     private String dataNascimento;
     private String cpf;
+
+    public Pessoa(String cpf) {
+        this.cpf = cpf;
+    }
 
     public String getNome() {
         return nome;
@@ -35,6 +39,8 @@ public class Pessoa {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
+
+    abstract double calcularRemuneracao();
     public String toString(){
         return "Nome: "+getNome()+"\n"+
                 "Sexo: "+getSex()+"\n"+

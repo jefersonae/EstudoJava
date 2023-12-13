@@ -3,6 +3,15 @@ public class Tecnico extends Pessoa {
     private String funcao;
     private String anoEntrada;
 
+    public Tecnico(String cpf) {
+        super(cpf);
+    }
+
+    @Override
+    double calcularRemuneracao() {
+        return 0;
+    }
+
     public String getCargo() {
         return cargo;
     }
@@ -29,6 +38,6 @@ public class Tecnico extends Pessoa {
     public String toString() {
         return super.toString()+"Cargo: "+getCargo()+"\n"+
                 "Função: "+getFuncao()+"\n"+
-                "Entrada: "+getAnoEntrada();
+                "Entrada: "+getAnoEntrada()+"\n Remuneração extra: R$"+calcularRemuneracao();
     }
 }

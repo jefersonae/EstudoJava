@@ -2,6 +2,16 @@ public class Candidato extends Pessoa {
     private String dataConcurso;
     private int codConcurso;
     private int pontuacao;
+
+    public Candidato(String cpf) {
+        super(cpf);
+    }
+
+    @Override
+    double calcularRemuneracao() {
+        return 0;
+    }
+
     public String getDataConcurso() {
         return dataConcurso;
     }
@@ -12,7 +22,7 @@ public class Candidato extends Pessoa {
     public void setCodConcurso(int codConcurso) {
         this.codConcurso = codConcurso;
     }
-    public int getPostuacao() {
+    public int getPontuacao() {
         return pontuacao;
     }
     public void setPontuacao(int pontuacao) {
@@ -21,6 +31,6 @@ public class Candidato extends Pessoa {
     public String toString() {
         return super.toString()+"Data do Concurso: "+getDataConcurso()+"\n"+
                 "Código do Concurso: "+getCodconcurso()+"\n"+
-                "Pontuação: "+getPostuacao()+"\n";
+                "Pontuação: "+getPontuacao()+"\n"+"Remuneração extra: R$"+calcularRemuneracao();
     }
 }

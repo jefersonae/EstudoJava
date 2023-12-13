@@ -2,6 +2,15 @@ public class Psicologo extends Pessoa {
     private String especialidade;
     private String crp;
 
+    public Psicologo(String cpf) {
+        super(cpf);
+    }
+
+    @Override
+    double calcularRemuneracao() {
+        return 0;
+    }
+
     public String getEspecialidade() {
         return especialidade;
     }
@@ -19,6 +28,6 @@ public class Psicologo extends Pessoa {
     }
     public String toString(){
         return super.toString()+"Especialidae: "+getEspecialidade()+"\n"+
-                "CRP: "+getCrp();
+                "CRP: "+getCrp()+"\n Remuneração extra: R$"+calcularRemuneracao();
     }
 }

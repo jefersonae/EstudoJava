@@ -4,6 +4,10 @@ public class Coordenador extends Professor {
     private String anoSaida;
     private int qntAno;
 
+    public Coordenador(String cpf) {
+        super(cpf);
+    }
+
     public String getAnoEntrada() {
         return anoEntrada;
     }
@@ -28,6 +32,6 @@ public class Coordenador extends Professor {
     public String toString(){
         return super.toString()+"Ano de Entrada: "+getAnoEntrada()+"\n"+
                 "Ano Saída: "+getAnoSaida()+"\n"+
-                "A quantidade de anos permaceu no cargo foi:"+getQntAno();
+                "A quantidade de anos permaceu no cargo foi:"+getQntAno()+"\n Remuneração extra: R$"+calcularRemuneracao();
     }
 }

@@ -5,6 +5,15 @@ public class Egresso extends Pessoa {
     private int anosGraduacao;
     private String nomeCurso;
 
+    public Egresso(String cpf) {
+        super(cpf);
+    }
+
+    @Override
+    double calcularRemuneracao() {
+        return 0;
+    }
+
     public String getAnoInicio() {
         return anoInicio;
     }
@@ -37,6 +46,6 @@ public class Egresso extends Pessoa {
         return super.toString()+"Ano de inicio: "+getAnoInicio()+"\n"+
                 "Ano de conclusão: "+getAnoConclusao()+"\n"+
                 "Anos para se graduar: "+getAnosGraduacao()+"\n"+
-                "Nome do curso: "+getNomeCurso();
+                "Nome do curso: "+getNomeCurso()+"\n Remuneração extra: R$"+calcularRemuneracao();
     }
 }
