@@ -48,6 +48,7 @@ public class App {
         String anoConclusao;
         int anosGraduacao;
         String nomeCurso;
+        byte tempoServico;
 
         while(opcao != 0){
             switch (opcao){
@@ -116,6 +117,10 @@ public class App {
                     System.out.println("Digite a quantidade de disciplinas: ");
                     qntDisciplina = ler.nextByte();
                     professor.setQntDisciplina(qntDisciplina);
+
+                    System.out.println("Digite quantos anos tem de serviço: ");
+                    tempoServico = ler.nextByte();
+                    professor.setTempoServico(tempoServico);
 
                     listaProfessor.add(professor);
                     System.out.println("Professor cadastrado com sucesso");
