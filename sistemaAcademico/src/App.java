@@ -48,40 +48,39 @@ public class App {
         String anoConclusao;
         int anosGraduacao;
         String nomeCurso;
-        byte tempoServico;
 
         while(opcao != 0){
             switch (opcao){
                 case 1:
-                    System.out.println("Nome do aluno: ");
-                    nome = ler.next();
-
-                    System.out.println("Qual o seu sexo (digite M - Mulher / H - Homem)? ");
-                    sex = ler.next().charAt(0);
-
-                    System.out.println("Digite o local de nascimento: ");
-                    localNascimento = ler.next();
-
-                    System.out.println("Digite a data de nascimento: ");
-                    dataNascimento = ler.next();
-
                     System.out.println("Digite o CPF: ");
                     cpf = ler.next();
 
+                    Aluno aluno = new Aluno(cpf);
+
+                    System.out.println("Nome do aluno: ");
+                    nome = ler.next();
+                    aluno.setNome(nome);
+
+                    System.out.println("Qual o seu sexo (digite M - Mulher / H - Homem)? ");
+                    sex = ler.next().charAt(0);
+                    aluno.setSex(sex);
+
+                    System.out.println("Digite o local de nascimento: ");
+                    localNascimento = ler.next();
+                    aluno.setNomeNascimento(localNascimento);
+
+                    System.out.println("Digite a data de nascimento: ");
+                    dataNascimento = ler.next();
+                    aluno.setDataNascimento(dataNascimento);
+
+
                     System.out.println("Digite a nota 1: ");
                     nota1 = ler.nextFloat();
+                    aluno.setNota1(nota1);
 
                     System.out.println("Digite a nota 2: ");
                     nota2 = ler.nextFloat();
-
-                    Aluno aluno = new Aluno(cpf);
-
-                    aluno.setNota1(nota1);
-                    aluno.setNome(nome);
                     aluno.setNota2(nota2);
-                    aluno.setDataNascimento(dataNascimento);
-                    aluno.setNomeNascimento(localNascimento);
-                    aluno.setSex(sex);
 
                     listaAlunos.add(aluno);
                     System.out.println("Aluno cadastrado com sucesso");
@@ -91,77 +90,69 @@ public class App {
                     System.out.println(listaAlunos);
                     break;
                 case 3:
-                    System.out.println("Nome do aluno: ");
-                    nome = ler.next();
-
-                    System.out.println("Qual o seu sexo (digite M - Mulher / H - Homem)? ");
-                    sex = ler.next().charAt(0);
-
-                    System.out.println("Digite o local de nascimento: ");
-                    localNascimento = ler.next();
-
-                    System.out.println("Digite a data de nascimento: ");
-                    dataNascimento = ler.next();
-
                     System.out.println("Digite o CPF: ");
                     cpf = ler.next();
 
                     System.out.println("Digite a formação: ");
                     formacao = ler.next();
 
+                    Professor professor = new Professor(cpf, formacao);
+                    System.out.println("Nome do aluno: ");
+                    nome = ler.next();
+                    professor.setNome(nome);
+
+                    System.out.println("Qual o seu sexo (digite M - Mulher / H - Homem)? ");
+                    sex = ler.next().charAt(0);
+                    professor.setSex(sex);
+
+                    System.out.println("Digite o local de nascimento: ");
+                    localNascimento = ler.next();
+                    professor.setNomeNascimento(localNascimento);
+
+                    System.out.println("Digite a data de nascimento: ");
+                    dataNascimento = ler.next();
+                    professor.setDataNascimento(dataNascimento);
+
                     System.out.println("Digite a quantidade de disciplinas: ");
                     qntDisciplina = ler.nextByte();
-
-                    System.out.println("Digite o tempo de serviço dele: ");
-                    tempoServico = ler.nextByte();
-
-                    Professor professor = new Professor(cpf, formacao);
-
-                    professor.setNome(nome);
-                    professor.setSex(sex);
-                    professor.setNomeNascimento(localNascimento);
-                    professor.setDataNascimento(dataNascimento);
                     professor.setQntDisciplina(qntDisciplina);
-                    professor.setTempoServico(tempoServico);
 
                     listaProfessor.add(professor);
                     System.out.println("Professor cadastrado com sucesso");
-                    System.out.println("Professor >>>"+professor);
                     break;
                 case 4:
                     System.out.println("********************LISTA DE PROFESSORES********************");
                     System.out.println(listaProfessor);
                     break;
                 case 5:
-                    System.out.println("Nome do psicologo: ");
-                    nome = ler.next();
-
-                    System.out.println("Qual o seu sexo (digite M - Mulher / H - Homem)? ");
-                    sex = ler.next().charAt(0);
-
-                    System.out.println("Digite o local de nascimento: ");
-                    localNascimento = ler.next();
-
-                    System.out.println("Digite a data de nascimento: ");
-                    dataNascimento = ler.next();
-
                     System.out.println("Digite o CPF: ");
                     cpf = ler.next();
 
+                    Psicologo psicologo = new Psicologo(cpf);
+
+                    System.out.println("Nome do psicologo: ");
+                    nome = ler.next();
+                    psicologo.setNome(nome);
+
+                    System.out.println("Qual o seu sexo (digite M - Mulher / H - Homem)? ");
+                    sex = ler.next().charAt(0);
+                    psicologo.setSex(sex);
+
+                    System.out.println("Digite o local de nascimento: ");
+                    localNascimento = ler.next();
+                    psicologo.setNomeNascimento(localNascimento);
+
+                    System.out.println("Digite a data de nascimento: ");
+                    dataNascimento = ler.next();
+                    psicologo.setDataNascimento(dataNascimento);
+
                     System.out.println("Digite a especialidade: ");
                     especialidade = ler.next();
+                    psicologo.setEspecialidade(especialidade);
 
                     System.out.println("Digite o CRP: ");
                     crp = ler.next();
-
-                    Psicologo psicologo = new Psicologo(cpf);
-
-                    psicologo.setNome(nome);
-                    psicologo.setSex(sex);
-                    psicologo.setNomeNascimento(localNascimento);
-                    psicologo.setEspecialidade(especialidade);
                     psicologo.setCrp(crp);
-                    psicologo.setDataNascimento(dataNascimento);
 
                     listaPsicologo.add(psicologo);
                     System.out.println("Psicologo cadastrado com sucesso");
@@ -171,31 +162,30 @@ public class App {
                     System.out.println(listaPsicologo);
                     break;
                 case 7:
-                    System.out.println("Nome do pedagogo: ");
-                    nome = ler.next();
-
-                    System.out.println("Qual o seu sexo (digite M - Mulher / H - Homem)? ");
-                    sex = ler.next().charAt(0);
-
-                    System.out.println("Digite o local de nascimento: ");
-                    localNascimento = ler.next();
-
-                    System.out.println("Digite a data de nascimento: ");
-                    dataNascimento = ler.next();
-
                     System.out.println("Digite o CPF: ");
                     cpf = ler.next();
 
-                    System.out.println("Digite o registro: ");
-                    registro = ler.next();
-
                     Pedagogo pedagogo  = new Pedagogo(cpf);
 
+                    System.out.println("Nome do pedagogo: ");
+                    nome = ler.next();
                     pedagogo.setNome(nome);
-                    pedagogo.setRegistro(registro);
-                    pedagogo.setDataNascimento(dataNascimento);
-                    pedagogo.setNomeNascimento(localNascimento);
+
+                    System.out.println("Qual o seu sexo (digite M - Mulher / H - Homem)? ");
+                    sex = ler.next().charAt(0);
                     pedagogo.setSex(sex);
+
+                    System.out.println("Digite o local de nascimento: ");
+                    localNascimento = ler.next();
+                    pedagogo.setNomeNascimento(localNascimento);
+
+                    System.out.println("Digite a data de nascimento: ");
+                    dataNascimento = ler.next();
+                    pedagogo.setDataNascimento(dataNascimento);
+
+                    System.out.println("Digite o registro: ");
+                    registro = ler.next();
+                    pedagogo.setRegistro(registro);
 
                     listaPedagogo.add(pedagogo);
                     System.out.println("Pedagogo cadastrado com sucesso");
@@ -205,38 +195,37 @@ public class App {
                     System.out.println(listaPedagogo);
                     break;
                 case 9:
-                    System.out.println("Nome do tecnico: ");
-                    nome = ler.next();
-
-                    System.out.println("Qual o seu sexo (digite M - Mulher / H - Homem)? ");
-                    sex = ler.next().charAt(0);
-
-                    System.out.println("Digite o local de nascimento: ");
-                    localNascimento = ler.next();
-
-                    System.out.println("Digite a data de nascimento: ");
-                    dataNascimento = ler.next();
-
                     System.out.println("Digite o CPF: ");
                     cpf = ler.next();
 
+                    Tecnico tecnico  = new Tecnico(cpf);
+
+                    System.out.println("Nome do tecnico: ");
+                    nome = ler.next();
+                    tecnico.setNome(nome);
+
+                    System.out.println("Qual o seu sexo (digite M - Mulher / H - Homem)? ");
+                    sex = ler.next().charAt(0);
+                    tecnico.setSex(sex);
+
+                    System.out.println("Digite o local de nascimento: ");
+                    localNascimento = ler.next();
+                    tecnico.setNomeNascimento(localNascimento);
+
+                    System.out.println("Digite a data de nascimento: ");
+                    dataNascimento = ler.next();
+                    tecnico.setDataNascimento(dataNascimento);
+
                     System.out.println("Digite o cargo: ");
                     cargo = ler.next();
+                    tecnico.setCargo(cargo);
 
                     System.out.println("Digite a função: ");
                     funcao = ler.next();
+                    tecnico.setFuncao(funcao);
 
                     System.out.println("Digite o ano de entrada: ");
                     anoEntrada = ler.next();
-
-                    Tecnico tecnico  = new Tecnico(cpf);
-
-                    tecnico.setNome(nome);
-                    tecnico.setSex(sex);
-                    tecnico.setNomeNascimento(localNascimento);
-                    tecnico.setDataNascimento(dataNascimento);
-                    tecnico.setCargo(cargo);
-                    tecnico.setFuncao(funcao);
                     tecnico.setAnoEntrada(anoEntrada);
 
                     listaTecnico.add(tecnico);
@@ -247,37 +236,36 @@ public class App {
                     System.out.println(listaTecnico);
                     break;
                 case 11:
-                    System.out.println("Nome do Responsável: ");
-                    nome = ler.next();
-
-                    System.out.println("Qual o seu sexo (digite M - Mulher / H - Homem)? ");
-                    sex = ler.next().charAt(0);
-
-                    System.out.println("Digite o local de nascimento: ");
-                    localNascimento = ler.next();
-
-                    System.out.println("Digite a data de nascimento: ");
-                    dataNascimento = ler.next();
-
                     System.out.println("Digite o CPF: ");
                     cpf = ler.next();
 
+                    Responsavel resposanvel  = new Responsavel(cpf);
+
+                    System.out.println("Nome do Responsável: ");
+                    nome = ler.next();
+                    resposanvel.setNome(nome);
+
+                    System.out.println("Qual o seu sexo (digite M - Mulher / H - Homem)? ");
+                    sex = ler.next().charAt(0);
+                    resposanvel.setSex(sex);
+
+                    System.out.println("Digite o local de nascimento: ");
+                    localNascimento = ler.next();
+                    resposanvel.setNomeNascimento(localNascimento);
+
+                    System.out.println("Digite a data de nascimento: ");
+                    dataNascimento = ler.next();
+                    resposanvel.setDataNascimento(dataNascimento);
+
                     System.out.println("Digite o parentesco: ");
                     parentesco = ler.next();
+                    resposanvel.setParentesco(parentesco);
 
                     System.out.println("Digite a renda: ");
                     renda = ler.nextDouble();
+                    resposanvel.setRenda(renda);
 
-                    Responsavel responsavel  = new Responsavel(cpf);
-
-                    responsavel.setNome(nome);
-                    responsavel.setSex(sex);
-                    responsavel.setNomeNascimento(localNascimento);
-                    responsavel.setParentesco(parentesco);
-                    responsavel.setRenda(renda);
-                    responsavel.setDataNascimento(dataNascimento);
-
-                    listaResponsavel.add(responsavel);
+                    listaResponsavel.add(resposanvel);
                     System.out.println("Responsável cadastrado com sucesso");
                     break;
                 case 12:
@@ -285,38 +273,37 @@ public class App {
                     System.out.println(listaResponsavel);
                     break;
                 case 13:
-                    System.out.println("Nome do Candidato: ");
-                    nome = ler.next();
-
-                    System.out.println("Qual o seu sexo (digite M - Mulher / H - Homem)? ");
-                    sex = ler.next().charAt(0);
-
-                    System.out.println("Digite o local de nascimento: ");
-                    localNascimento = ler.next();
-
-                    System.out.println("Digite a data de nascimento: ");
-                    dataNascimento = ler.next();
-
                     System.out.println("Digite o CPF: ");
                     cpf = ler.next();
 
+                    Candidato candidato  = new Candidato(cpf);
+
+                    System.out.println("Nome do Candidato: ");
+                    nome = ler.next();
+                    candidato.setNome(nome);
+
+                    System.out.println("Qual o seu sexo (digite M - Mulher / H - Homem)? ");
+                    sex = ler.next().charAt(0);
+                    candidato.setSex(sex);
+
+                    System.out.println("Digite o local de nascimento: ");
+                    localNascimento = ler.next();
+                    candidato.setNomeNascimento(localNascimento);
+
+                    System.out.println("Digite a data de nascimento: ");
+                    dataNascimento = ler.next();
+                    candidato.setDataNascimento(dataNascimento);
+
                     System.out.println("Digite a data do concurso: ");
                     dataConcurso = ler.next();
+                    candidato.setDataConcurso(dataConcurso);
 
                     System.out.println("Digite código de Concurso: ");
                     codConcurso = ler.nextInt();
+                    candidato.setCodConcurso(codConcurso);
 
                     System.out.println("Digite a pontuacao do Concurso: ");
                     pontuacao = ler.nextInt();
-
-                    Candidato candidato  = new Candidato(cpf);
-
-                    candidato.setSex(sex);
-                    candidato.setNome(nome);
-                    candidato.setNomeNascimento(localNascimento);
-                    candidato.setDataNascimento(dataNascimento);
-                    candidato.setDataConcurso(dataConcurso);
-                    candidato.setCodConcurso(codConcurso);
                     candidato.setPontuacao(pontuacao);
 
                     listaCandidato.add(candidato);
@@ -327,35 +314,34 @@ public class App {
                     System.out.println(listaCandidato);
                     break;
                 case 15:
-                    System.out.println("Nome do Candidato: ");
-                    nome = ler.next();
-
-                    System.out.println("Qual o seu sexo (digite M - Mulher / H - Homem)? ");
-                    sex = ler.next().charAt(0);
-
-                    System.out.println("Digite o local de nascimento: ");
-                    localNascimento = ler.next();
-
-                    System.out.println("Digite a data de nascimento: ");
-                    dataNascimento = ler.next();
-
                     System.out.println("Digite o CPF: ");
                     cpf = ler.next();
 
+                    AssistenteSocial assistenteSocial  = new AssistenteSocial(cpf);
+
+                    System.out.println("Nome do Candidato: ");
+                    nome = ler.next();
+                    assistenteSocial.setNome(nome);
+
+                    System.out.println("Qual o seu sexo (digite M - Mulher / H - Homem)? ");
+                    sex = ler.next().charAt(0);
+                    assistenteSocial.setSex(sex);
+
+                    System.out.println("Digite o local de nascimento: ");
+                    localNascimento = ler.next();
+                    assistenteSocial.setNomeNascimento(localNascimento);
+
+                    System.out.println("Digite a data de nascimento: ");
+                    dataNascimento = ler.next();
+                    assistenteSocial.setDataNascimento(dataNascimento);
+
                     System.out.println("Digite o registro do CRESS: ");
                     cress = ler.next();
+                    assistenteSocial.setCress(cress);
 
                     System.out.println("Digite o número de alunos responsáveis: ");
                     numAlunos = ler.nextInt();
-
-                    AssistenteSocial assistenteSocial  = new AssistenteSocial(cpf);
-
-                    assistenteSocial.setNome(nome);
-                    assistenteSocial.setSex(sex);
-                    assistenteSocial.setNomeNascimento(localNascimento);
-                    assistenteSocial.setDataNascimento(dataNascimento);
                     assistenteSocial.setNumAlunos(numAlunos);
-                    assistenteSocial.setCress(cress);
 
                     listaAssistenteSocial.add(assistenteSocial);
                     break;
@@ -364,39 +350,38 @@ public class App {
                     System.out.println(listaAssistenteSocial);
                     break;
                 case 17:
-                    System.out.println("Nome do Candidato: ");
-                    nome = ler.next();
-
-                    System.out.println("Qual o seu sexo (digite M - Mulher / H - Homem)? ");
-                    sex = ler.next().charAt(0);
-
-                    System.out.println("Digite o local de nascimento: ");
-                    localNascimento = ler.next();
-
-                    System.out.println("Digite a data de nascimento: ");
-                    dataNascimento = ler.next();
-
                     System.out.println("Digite o CPF: ");
                     cpf = ler.next();
 
+                    Coordenador coordenador  = new Coordenador(cpf);
+
+                    System.out.println("Nome do Candidato: ");
+                    nome = ler.next();
+                    coordenador.setNome(nome);
+
+                    System.out.println("Qual o seu sexo (digite M - Mulher / H - Homem)? ");
+                    sex = ler.next().charAt(0);
+                    coordenador.setSex(sex);
+
+                    System.out.println("Digite o local de nascimento: ");
+                    localNascimento = ler.next();
+                    coordenador.setNomeNascimento(localNascimento);
+
+                    System.out.println("Digite a data de nascimento: ");
+                    dataNascimento = ler.next();
+                    coordenador.setDataNascimento(dataNascimento);
+
                     System.out.println("Digite o ano de entrada no cargo: ");
                     anoEntrada = ler.next();
+                    coordenador.setAnoEntrada(anoEntrada);
 
                     System.out.println("Digite o ano de saída do cargo: ");
                     anoSaida = ler.next();
+                    coordenador.setAnoSaida(anoSaida);
 
                     System.out.println("Digite a quantidade de anos no cargo: ");
                     qntAno = ler.nextInt();
-
-                    Coordenador coordenador  = new Coordenador(cpf);
-
-                    coordenador.setNome(nome);
-                    coordenador.setSex(sex);
-                    coordenador.setNomeNascimento(localNascimento);
-                    coordenador.setDataNascimento(dataNascimento);
                     coordenador.setQntAno(qntAno);
-                    coordenador.setAnoSaida(anoSaida);
-                    coordenador.setAnoEntrada(anoEntrada);
 
                     listaCoordenador.add(coordenador);
                     break;
@@ -405,43 +390,42 @@ public class App {
                     System.out.println(listaCoordenador);
                     break;
                 case 19:
-                    System.out.println("Nome do Candidato: ");
-                    nome = ler.next();
-
-                    System.out.println("Qual o seu sexo (digite M - Mulher / H - Homem)? ");
-                    sex = ler.next().charAt(0);
-
-                    System.out.println("Digite o local de nascimento: ");
-                    localNascimento = ler.next();
-
-                    System.out.println("Digite a data de nascimento: ");
-                    dataNascimento = ler.next();
-
                     System.out.println("Digite o CPF: ");
                     cpf = ler.next();
 
+                    Egresso egresso  = new Egresso(cpf);
+
+                    System.out.println("Nome do Candidato: ");
+                    nome = ler.next();
+                    egresso.setNome(nome);
+
+                    System.out.println("Qual o seu sexo (digite M - Mulher / H - Homem)? ");
+                    sex = ler.next().charAt(0);
+                    egresso.setSex(sex);
+
+                    System.out.println("Digite o local de nascimento: ");
+                    localNascimento = ler.next();
+                    egresso.setNomeNascimento(localNascimento);
+
+                    System.out.println("Digite a data de nascimento: ");
+                    dataNascimento = ler.next();
+                    egresso.setDataNascimento(dataNascimento);
+
                     System.out.println("Digite o ano que entrou no curso: ");
                     anoInicio = ler.next();
+                    egresso.setAnoInicio(anoInicio);
 
                     System.out.println("Digite o ano de saída do curso: ");
                     anoConclusao = ler.next();
+                    egresso.setAnoConclusao(anoConclusao);
 
                     System.out.println("Digite a quantidade de anos que demorou para se graduar: ");
                     anosGraduacao = ler.nextInt();
+                    egresso.setAnosGraduacao(anosGraduacao);
 
                     System.out.println("Digite o nome do curso: ");
                     nomeCurso = ler.next();
-
-                    Egresso egresso  = new Egresso(cpf);
-
-                    egresso.setNome(nome);
-                    egresso.setSex(sex);
-                    egresso.setNomeNascimento(localNascimento);
-                    egresso.setDataNascimento(dataNascimento);
-                    egresso.setAnoInicio(anoInicio);
                     egresso.setNomeCurso(nomeCurso);
-                    egresso.setAnosGraduacao(anosGraduacao);
-                    egresso.setAnoConclusao(anoConclusao);
 
                     listaEgresso.add(egresso);
                     break;
